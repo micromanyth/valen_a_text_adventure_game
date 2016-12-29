@@ -1,8 +1,9 @@
 import time
-# import random  Will use for random enemy encounters later
+from playerClass import player
+from theRoad import theRoad
 
 def mainHall():
-    print("You are standing in the great marble hall of your family's castle.")
+    print("\nYou are standing in the great marble hall of your family's castle.")
     print("there is a large fire pit smouldering in the center of the room.")
     print("Several servants are shuffling about working on various tasks.")
     time.sleep(3)
@@ -38,7 +39,34 @@ def armoury():
     elif option == "s":
         mainHall()
 
-#def shop():
+def shop():
+    print("An oil lamp lights up the wooden counter where a very old woman with raven hair tends the shop.")
+    print("'Hello, my lord. What can I get for you today?'")
+    time.sleep(3)
+    shopItems = ["Bronze Axe", "Steel Long Sword", "Glaive"]
+
+    print("Three weapons lay on the counter,")
+    print(shopItems)
+    time.sleep(2)
+    choice = input("Each item has an attack value of 5, select the axe with '1', the sword '2', or the glaive '3': ")
+    time.sleep(2)
+    if choice == "1":
+        player.weapon = shopItems[1]
+        print("You now wield the Bronze Axe. You thank the shop keeper and head for the main hall...")
+        time.sleep(3)
+    elif choice == "2":
+        player.weapon = shopItems[2]
+        print("You now wield the Steel Long Sword. You thank the shop keeper and head for the main hall...")
+        time.sleep(3)
+    elif choice == "3":
+        player.weapon = shopItems[3]
+        print("You now wield the Glaive. You thank the shop keeper and head for the main hall...")
+        time.sleep(3)
+    else:
+        print("That is not a valid selection, please enter 1,2,or 3...")
+        time.sleep(2)
+        shop()
+    mainHall()
 
 def trainingRoom():
     print("\nAn old grizzled commander barks out orders as young acolytes swing weapons into lifeless training ")
@@ -81,7 +109,7 @@ def library():
         adventureTome()
         mainHall()
     elif option == "e":
-        mainhall()
+        mainHall()
 
 def adventureTome():
     print("\nYou turn the heavy cover open and begin to scan the pages...")

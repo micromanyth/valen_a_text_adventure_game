@@ -5,7 +5,6 @@
 # A basic text-adventure game centered around functional programming in Python
 
 import time
-# import playerClass - Must create player doll
 from mainHall import mainHall
 
 def displayIntro():
